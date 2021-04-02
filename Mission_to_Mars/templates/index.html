@@ -20,14 +20,20 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Latest Mars News</h2>
-                    <h4>{{mars.news_title}}</h4>
-                    <p>{{mars.news_p}}</p>
+            </div>
+        </div>
+    </br>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>{{mars.news_title}}</h4>
+                <p>{{mars.news_p}}</p>
             </div>
         </div>
     
         <div class="row">
             <div class="col-md-8">
                 <h2>Featured Mars Image</h2>
+            </br>
                 <img src="{{mars.featured_image_url}}" alt ="Featured Mars Image">
             </div>
         
@@ -35,26 +41,26 @@
             <h4>Mars Facts</h4>
             {{ mars.facts | safe }}
             </div>
+            </br>
         </div>
-    
-        <div class="row">
-            <div class="col-md-12">
-                <h2><class="align-items-center">Mars hemispheres</h2>  
+    </br>
         
-                {% for hemisphere in mars.hemispheres %} 
-                    <div class="col-md-6">
-                        <div class = "thumbnail">
-                        <img src = "{{ hemispheres.img_url | safe }}">
+        <div class="container-fluid text-center">
+            <h2><b>Mars Hemispheres</b></h2>
+        </br>
+            <div class="row"></div>
+                {% for hemisphere in mars.hemispheres %}
+                <div class="col-md-6">
+                    <div class="card" style="size: 25rem;">
+                        <img src="{{ hemisphere.img_url | safe }}" class="card-img-top" alt="{{hemisphere.title}}">
+                        <div class="card-body">
+                            <p class="card-text"><b> {{hemisphere.title}} </b></p>
                         </div>
-                        <div>
-                        <h4> {{ hemispheres.hemi_title | safe }} </h4>  
-                        </div>
-                
                     </div>
-                {% endfor %}
-                
                 </div>
-            </div>
+                {% endfor %}
+
+        </div>
         </div> 
         </div> 
     </body>
